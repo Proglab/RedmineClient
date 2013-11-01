@@ -71,6 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\DatasService.cs" />
+    <Compile Include="Model\ProjectObject.cs" />
+    <Compile Include="Model\ProjectsMapper.cs" />
+    <Compile Include="Model\Tools.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

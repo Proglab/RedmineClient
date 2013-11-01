@@ -55,7 +55,7 @@ namespace RedmineClient.ViewModel
             }
         }
 
-        public MenuViewModel List
+        public MenuViewModel Menu
         {
             get
             {
@@ -63,7 +63,7 @@ namespace RedmineClient.ViewModel
             }
         }
 
-        public LoginViewModel List
+        public LoginViewModel Login
         {
             get
             {

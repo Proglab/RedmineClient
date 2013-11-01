@@ -1,4 +1,7 @@
 using GalaSoft.MvvmLight;
+using RedmineClient.Model;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace RedmineClient.ViewModel
 {
@@ -19,6 +22,9 @@ namespace RedmineClient.ViewModel
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
+        /// 
+        private ProjectsMapper projectMapper =  new ProjectsMapper();
+         
         public MainViewModel()
         {
             ////if (IsInDesignMode)
@@ -29,6 +35,21 @@ namespace RedmineClient.ViewModel
             ////{
             ////    // Code runs "for real"
             ////}
+
+            
+            ProjectsCol = projectMapper.getAll();
+            
         }
+
+        private ObservableCollection<ProjectObject> _ProjectsCol;
+
+        public ObservableCollection<ProjectObject> ProjectsCol
+        {
+            get {
+                return _ProjectsCol;
+            }
+            set { _ProjectsCol = value; }
+        }
+        
     }
 }
