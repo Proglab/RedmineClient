@@ -20,7 +20,10 @@ namespace RedmineClient.Model
 
         public ObservableCollection<ProjectObject> getAll()
         {
-            IList<Project> ProjectList = _DatasService.getProjects(new NameValueCollection { { "parent", "none" } });
+            IEnumerable<Project> ProjectList = _DatasService.getProjects();
+            ProjectList = from Project project in ProjectList
+                          where String.IsNullOrWhiteSpace(Convert.ToString(project.Parent))
+                           select project;
             _ListProject = Tools<ProjectObject, Project>.Transform(ProjectList);
             return _ListProject;
         }
